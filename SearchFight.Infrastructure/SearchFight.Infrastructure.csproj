@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SearchFight.Application\SearchFight.ApplicationDomain.csproj" />
+    <ProjectReference Include="..\SearchFight.Domain\SearchFight.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

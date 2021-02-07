@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.ConsoleApplication", "SearchFight\SearchFight.ConsoleApplication.csproj", "{7A502D9A-3AD7-43F4-AE9F-87BDD7C51394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.ConsoleApp", "SearchFight.ConsoleApp\SearchFight.ConsoleApp.csproj", "{7A502D9A-3AD7-43F4-AE9F-87BDD7C51394}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D22169C-B1E2-440A-8020-3086F9CF2354}"
 EndProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{08DA4002-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.Infrastructure", "SearchFight.Infrastructure\SearchFight.Infrastructure.csproj", "{9D3F3242-94FA-4707-AF25-369F2760AF0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.ApplicationDomain", "SearchFight.Application\SearchFight.ApplicationDomain.csproj", "{19DF6BF0-BE29-4330-8A5D-E5C43EC6E8E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.Domain", "SearchFight.Domain\SearchFight.Domain.csproj", "{19DF6BF0-BE29-4330-8A5D-E5C43EC6E8E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchFight.IoC", "SearchFight.IoC\SearchFight.IoC.csproj", "{7DB32B19-6767-44DA-81F3-C2844A9269C2}"
 EndProject

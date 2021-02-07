@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SearchFight\SearchFight.ConsoleApplication.csproj" />
+    <ProjectReference Include="..\SearchFight.ConsoleApp\SearchFight.ConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>
