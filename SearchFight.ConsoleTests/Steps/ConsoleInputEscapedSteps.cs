@@ -19,7 +19,7 @@ namespace SearchFight.ConsoleTests.Steps
 
             // Assert ArgsHelper is available before running tests
             Type type = typeof(ArgsHelper);
-            bool isHelperAvailable = type.IsAbstract && type.IsSealed;
+            bool isHelperAvailable = type.IsAbstract && type.IsSealed && false;
             Assert.IsTrue(isHelperAvailable);
         }
 
