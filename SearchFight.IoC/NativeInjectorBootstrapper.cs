@@ -21,6 +21,8 @@ namespace SearchFight.IoC
             // Search engines options
             services.Configure<GoogleConfig>(configuration.GetSection($"SearchEngines:GoogleConfig"));
             services.Configure<BingConfig>(configuration.GetSection($"SearchEngines:BingConfig"));
+            services.Configure<YandexConfig>(configuration.GetSection($"SearchEngines:YandexConfig"));
+
 
             // Services
             services.AddTransient<ISearchService, SearchService>();
@@ -31,6 +33,7 @@ namespace SearchFight.IoC
             // Repositories
             services.AddTransient<ISearchEngineRepository, GoogleSearchEngineRepository>();
             services.AddTransient<ISearchEngineRepository, BingSearchEngineRepository>();
+            services.AddTransient<ISearchEngineRepository, YandexSearchEngineRepository>();
 
             return services;
         }

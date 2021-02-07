@@ -12,4 +12,8 @@
     <ProjectReference Include="..\SearchFight.Application\SearchFight.ApplicationDomain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Yandex\" />
+  </ItemGroup>
+
 </Project>

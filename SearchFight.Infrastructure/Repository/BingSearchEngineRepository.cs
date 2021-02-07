@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
+using SearchFight.ApplicationDomain.DTO;
+using SearchFight.ApplicationDomain.Enums;
 using SearchFight.ApplicationDomain.Interfaces.IRepositories;
 using SearchFight.Infrastructure.EngineOptionsConfig;
 using SearchFight.Infrastructure.Models.Bing;
@@ -21,7 +23,7 @@ namespace SearchFight.Infrastructure.Repository
 
         public string Name => _bingConfig.Name;
 
-        public async Task<long> GetResultAsync(string query)
+        public async Task<ResultDTO> GetResultAsync(string query)
         {
             if (query is null || query == string.Empty)
             {
@@ -29,11 +31,11 @@ namespace SearchFight.Infrastructure.Repository
             }
 
             var baseAddress = $"{_bingConfig.Url}?q={Uri.EscapeDataString(query)}";
-            
+
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Clear();
-                
+
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _bingConfig.ApiKey);
 
                 try
@@ -48,10 +50,12 @@ namespace SearchFight.Infrastructure.Repository
 
                     var result = stringResponse.DeserializeSearchResult<BingResponse>();
 
-                    return result.WebPages.TotalEstimatedMatches;
+                    var resultDTO = new ResultDTO() { ResponseCode = SearchResponseCode.OK, Results = result.WebPages.TotalEstimatedMatches };
+
+                    return resultDTO;
 
                 }
-                catch (Exception exception) 
+                catch (Exception exception)
                 {
                     throw new Exception(exception.Message);
                 }
