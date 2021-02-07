@@ -18,13 +18,13 @@ namespace SearchFight.ApplicationDomain.Services
 
         public async Task<List<Search>> GetResultsAsync(List<string> query)
         {
-            if(query is null || query.Count == 0)
+            if (query is null || query.Count == 0)
             {
                 throw new ArgumentException($"The object {nameof(query)} is null or empty.");
             }
 
             var list = new List<Search>();
-            
+
             foreach (var term in query)
             {
                 foreach (var repository in _searchRepositories)

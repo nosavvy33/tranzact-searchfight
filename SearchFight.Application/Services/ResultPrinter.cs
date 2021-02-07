@@ -1,4 +1,5 @@
-﻿using SearchFight.ApplicationDomain.Interfaces.IServices;
+﻿using SearchFight.ApplicationDomain.Enums;
+using SearchFight.ApplicationDomain.Interfaces.IServices;
 using SearchFight.ApplicationDomain.Models;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace SearchFight.ApplicationDomain.Services
         {
             searchResults
                 .GroupBy(result => result.SearchQuery)
-                .Select(group => $"{group.Key}: {string.Join(" ", group.Select(group => $"{group.SearchEngine}: {group.TotalResults}"))}")
+                .Select(group => $"{group.Key}: {string.Join(" ", group.Select(group => group.TotalResults.ResponseCode == SearchResponseCode.OK ? $"{group.SearchEngine}: {group.TotalResults.Results}" : $"{group.SearchEngine} : failed!"))}")
                 .ToList()
-                .ForEach(resultString => Console.WriteLine(resultString));
+                .ForEach(resultString => Console.WriteLine(resultString)); ;
         }
 
         private void PrintWinnersBySearchengine(List<Search> winners)

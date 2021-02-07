@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using SearchFight.ApplicationDomain.DTO;
+using System.Threading.Tasks;
 
 namespace SearchFight.ApplicationDomain.Interfaces.IRepositories
 {
@@ -14,6 +15,6 @@ namespace SearchFight.ApplicationDomain.Interfaces.IRepositories
         /// </summary>
         /// <param name="query">Search query words</param>
         /// <returns>Total search coincidences</returns>
-        Task<long> GetResultAsync(string query);
+        Task<ResultDTO> GetResultAsync(string query);
     }
 }

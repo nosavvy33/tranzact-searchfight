@@ -1,4 +1,6 @@
-﻿namespace SearchFight.ApplicationDomain.Models
+﻿using SearchFight.ApplicationDomain.DTO;
+
+namespace SearchFight.ApplicationDomain.Models
 {
     public class Search
     {
@@ -6,6 +8,7 @@
 
         public string SearchQuery { get; set; }
 
-        public long TotalResults { get; set; }
+        //public long TotalResults { get; set; }
+        public ResultDTO TotalResults { get; set; }
     }
 }
